@@ -57,7 +57,7 @@ float app_sht31_get_temp(const struct device *dev)
 float app_sht31_get_hum(const struct device *dev)
 {
     struct sensor_value raw_hum;
-    float hum 0 ;
+    float hum = 0;
     int8_t ret = 0;
 
     // fetching data

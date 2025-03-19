@@ -16,8 +16,8 @@ int8_t ind;		// declaration of isr index
 int8_t app_flash_init(struct nvs_fs *fs)
 {
 	struct flash_pages_info info;
-	int8_t ret;
-	ssize_t size;
+	int8_t ret = 0;
+	ssize_t size = 0;
 
 	// configuration of storage partition in flash memory
 	fs->flash_device = NVS_PARTITION_DEVICE;

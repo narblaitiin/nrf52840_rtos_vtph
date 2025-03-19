@@ -30,8 +30,8 @@ int8_t app_sht31_init(const struct device *dev)
 float app_sht31_get_temp(const struct device *dev)
 {
     struct sensor_value raw_temp;
-    float temp;
-    int8_t ret;
+    float temp = 0;
+    int8_t ret = 0;
 
     // fetching data
 	ret = sensor_sample_fetch(dev);
@@ -47,7 +47,7 @@ float app_sht31_get_temp(const struct device *dev)
 	    return 0;
     }
 
-    // conert struct to float : 4 bytes - 7 decimal points
+    // convert struct to float : 4 bytes - 7 decimal points
     temp = sensor_value_to_float(&raw_temp);
     printk("sht31 temp: %0.2f\n", temp);
     return temp;
@@ -57,8 +57,8 @@ float app_sht31_get_temp(const struct device *dev)
 float app_sht31_get_hum(const struct device *dev)
 {
     struct sensor_value raw_hum;
-    float hum;
-    int8_t ret;
+    float hum 0 ;
+    int8_t ret = 0;
 
     // fetching data
 	ret = sensor_sample_fetch(dev);
